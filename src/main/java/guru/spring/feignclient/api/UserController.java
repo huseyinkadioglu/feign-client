@@ -1,5 +1,6 @@
 package guru.spring.feignclient.api;
 
+import guru.spring.feignclient.client.MyUser;
 import guru.spring.feignclient.dto.UserResponse;
 import guru.spring.feignclient.service.UserService;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,11 @@ public class UserController {
     @GetMapping("/users")
     public List<UserResponse> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/createdOnes")
+    public List<MyUser> getAllMine(){
+        return userService.getAllCreatedUsers();
     }
 
 }
